@@ -1,98 +1,267 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <tite>Restaurant fictionnal</tite>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <style>
-        body{ font-family:Georgia,serif; }
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SunuTrips — Agence de Voyage</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+  <style>
+    body { font-family: Arial, sans-serif; }
 
-        /* HERO */
-        .hero{
-            background:linear-gradient(rgba(0,0,0,0.55) rgba(0,0,0,0.55)),
-            url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1400') center/cover no repeat;
-            min-height:90vh;
-            display:flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color:#fff;
-        }
+    /* NAVBAR */
+    .navbar-brand { font-size: 1.5rem; font-weight: bold; color: #f0ad4e !important; }
 
-        
-    </style>
+    /* HERO */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('https://static-cms.routard.com/web-routard/uploads/senegal_1605590_a741ca2770.jpg') center/cover no-repeat;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero h1 { font-size: 3.5rem; font-weight: bold; }
+    .hero p  { font-size: 1.3rem; margin-bottom: 30px; }
+
+    /* SECTION TITLE */
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #1a1a2e;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #f0ad4e;
+      margin: 10px auto 0;
+    }
+
+    /* DESTINATION CARDS */
+    .dest-card img {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .dest-card .card-img-overlay {
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      display: flex;
+      align-items: flex-end;
+    }
+
+    /* ACCORDEON */
+    .accordion-button:not(.collapsed) {
+      background-color: #1a1a2e;
+      color: #f0ad4e;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #1a1a2e;
+      color: #aaa;
+    }
+
+    footer a { color: #f0ad4e; font-size: 1.4rem; margin: 0 8px; }
+    footer a:hover { color: #fff; }
+  </style>
 </head>
 <body>
-    
-    <!--  NAVBAR  -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">WAGN BI</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#acceil">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#apropos">A propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
+
+  <!--  NAVBAR  -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">SunuTrips</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="#circuits">Circuits</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--  HERO  -->
+  <section id="accueil" class="hero">
+    <div>
+      <h1>Voyagez avec SunTrips</h1>
+      <p>Découvrez les plus belles destinations d'Afrique et du monde</p>
+      <a href="#destinations" class="btn btn-warning btn-lg px-5 fw-bold">Explorer les destinations</a>
+    </div>
+  </section>
+
+  <!--  DESTINATIONS  -->
+  <section id="destinations" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Nos Destinations</h2>
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="card dest-card text-white border-0 shadow">
+            <img src="https://res.cloudinary.com/lastminute-contenthub/s--YkgwHC2T--/c_limit,w_1920/f_auto/q_auto:eco/v1/DAM/Photos/Destinations/Africa/Morocco/Marrakech/shutterstock_1116613160" class="card-img" alt="Marrakech"/>
+            <div class="card-img-overlay">
+              <div>
+                <h5 class="card-title fw-bold">Marrakech, Maroc</h5>
+                <p class="card-text small">Médinas, souks colorés et palais historiques au cœur du Maghreb.</p>
+              </div>
             </div>
+          </div>
         </div>
-    </nav>
 
-    <!--  HERO  -->
-    <section id="accueil" class="hero">
-        <div>
-            <h1>Bienvenue au restaurant des milles saveurs</h1>
-            <p>La cuisine sénégalaise dans toute sa saveur</p>
-            <a href="#menu" class="btn btn-danger btn-lg px-5">Voir le menu</a>
-        </div>
-    </section>
-
-
-    <!--  MENU  -->
-    <section id="menu" class="py-5">
-        <div class="container">
-            <h2 class="section-title">Notre carte</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                  <img src="https://thumbs.dreamstime.com/b/thieboudienne-un-plat-traditionnel-s%C3%A9n%C3%A9galais-avec-du-poisson-riz-et-des-l%C3%A9gumes-sur-grand-comprenant-servi-pour-repas-413342292.jpg" alt="Thiébouienne" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Thieboudieune</h5>
-                        <p class="card-text text-muted">Le plat national sénégalais : riz au poisson avec légumes et épices traditionnelles.</p>
-                        <span class="price-badge">3500 FCFA</span>
-                    </div>
-                </div>
+        <div class="col-md-4">
+          <div class="card dest-card text-white border-0 shadow">
+            <img src="https://images2.bovpg.net/r/back/fr/sale/f064e69bfea417.jpg" class="card-img" alt="Zanzibar"/>
+            <div class="card-img-overlay">
+              <div>
+                <h5 class="card-title fw-bold">Zanzibar, Tanzanie</h5>
+                <p class="card-text small">Plages paradisiaques, eaux turquoise et épices exotiques.</p>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <div class="col-md-4">
-              <div class="card menu-card shadow-sm h-100">
-                <img src="https://soulfood.nl/wp-content/uploads/2020/06/yassa.jpg" alt="Yassa poulet" class="card-imdg-top">
-                <div class="card-body">
-                  <h5 class="card-title">Yassa poulet</h5>
-                  <p class="card-text text-muted">Poulet mariné aux oignons caramélisés, moutarde et citron, servi avec du riz.</p>
-                  <span class="price-badge">3000 FCFA</span>
+        <div class="col-md-4">
+          <div class="card dest-card text-white border-0 shadow">
+            <img src="https://discover-senegal.com/wp-content/uploads/2019/05/Monument_de_la_Renaissance_africaine2-2.jpg" class="card-img" alt="Dakar"/>
+            <div class="card-img-overlay">
+              <div>
+                <h5 class="card-title fw-bold">Dakar, Sénégal</h5>
+                <p class="card-text small">Culture vivante, gastronomie et couchers de soleil sur l'Atlantique.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--  CIRCUITS  -->
+  <section id="circuits" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Nos Circuits</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+
+          <div class="accordion" id="circuitsAccordion">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#circuit1">
+                  Circuit Maghreb — 10 jours
+                </button>
+              </h2>
+              <div id="circuit1" class="accordion-collapse collapse show" data-bs-parent="#circuitsAccordion">
+                <div class="accordion-body">
+                  Partez à la découverte du Maroc et de la Tunisie en 10 jours inoubliables. Visitez Marrakech, Fès, Carthage et Sidi Bou Saïd. Vol, hôtel et guide inclus.
+                  <br/><br/>
+                  <strong>À partir de 4 500 000 FCFA</strong>
+                  <br/>
+                  <a href="#contact" class="btn btn-warning btn-sm mt-2">Voir les détails</a>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-4">
-              <div class="card menu-card shadow-sm h-100">
-                <img src="https://lesoleil.sn/wp-content/uploads/2025/07/Thiere-tamakharite.jpg" class="card-img-top" alt="Thiéré"/>
-                <div class="card-body">
-                  <h5 class="card-title">Mafé d'Agneau</h5>
-                  <p class="card-text text-muted">Ragoût d'agneau en sauce arachide onctueuse, accompagné de légumes et de riz.</p>
-                  <span class="price-badge">4 000 FCFA</span>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#circuit2">
+                  Circuit Zanzibar & Safari — 12 jours
+                </button>
+              </h2>
+              <div id="circuit2" class="accordion-collapse collapse" data-bs-parent="#circuitsAccordion">
+                <div class="accordion-body">
+                  Combinez un safari exceptionnel dans le Serengeti avec des jours de farniente à Zanzibar. Une expérience unique entre aventure et détente absolue.
+                  <br/><br/>
+                  <strong>À partir de 7 500 000 FCFA</strong>
+                  <br/>
+                  <a href="#contact" class="btn btn-warning btn-sm mt-2">Voir les détails</a>
                 </div>
               </div>
             </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#circuit3">
+                  Circuit Afrique de l'Ouest — 8 jours
+                </button>
+              </h2>
+              <div id="circuit3" class="accordion-collapse collapse" data-bs-parent="#circuitsAccordion">
+                <div class="accordion-body">
+                  Découvrez Dakar, Saint-Louis et la Casamance en 8 jours. Plages, culture wolof, musique et gastronomie sénégalaise au programme de ce circuit authentique.
+                  <br/><br/>
+                  <strong>À partir de 2 800 000 FCFA</strong>
+                  <br/>
+                  <a href="#contact" class="btn btn-warning btn-sm mt-2">Voir les détails</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
+  <!--  CONTACT  -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-7">
+          <form>
+            <div class="mb-3">
+              <label class="form-label fw-bold">Nom</label>
+              <input type="text" class="form-control" placeholder="Votre nom" required/>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold">Email</label>
+              <input type="email" class="form-control" placeholder="Votre email" required/>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold">Destination d'intérêt</label>
+              <select class="form-select">
+                <option value="">-- Choisir une destination --</option>
+                <option>Marrakech, Maroc</option>
+                <option>Zanzibar, Tanzanie</option>
+                <option>Dakar, Sénégal</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold">Message</label>
+              <textarea class="form-control" rows="5" placeholder="Votre message..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning w-100 fw-bold">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!--  FOOTER  -->
+  <footer class="py-4 text-center">
+    <p class="mb-2">&copy; 2026 SunuTrips — Tous droits réservés</p>
+    <div>
+      <a href="#"><i class="bi bi-facebook"></i></a>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+      <a href="#"><i class="bi bi-twitter-x"></i></a>
+      <a href="#"><i class="bi bi-whatsapp"></i></a>
+      <a href="#"><i class="bi bi-youtube"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+</html>
